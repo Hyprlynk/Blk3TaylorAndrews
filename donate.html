@@ -46,7 +46,17 @@
       margin-right:auto:
     }
   </style>
-  <script src="donation.js"></script>
+  <script>
+    var totalDonationsNode = document.getElementById("totalDonations")
+    var totalMoney = 0;
+
+    function addMoney() {
+      totalMoney = parseInt(document.getElementById("donationAmount").value, 10) + totalMoney;
+      totalDonationsNode.textContent = totalMoney;
+    }
+
+    document.getElementById("donateButton").addEventListener("click", addMoney);
+  </script>
 </head>
 <body>
   <h1>Donate</h1>
