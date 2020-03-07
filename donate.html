@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Taylor Andrews - Donate</title>
+  <style>
+    body {
+      background:black;
+    }
+
+    h1 {
+      color:white;
+      text-align:center;
+    }
+
+    label {
+      color:yellow;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    input {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    button {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    p {
+      color:blue;
+      text-align:center;
+    }
+  </style>
+  <script>
+    var totalDonationsNode = document.getElementById("totalDonations")
+    var totalMoney = 0;
+
+    function addMoney() {
+      totalMoney = parseInt(document.getElementById("donationAmount").value, 10) + totalMoney;
+      totalDonationsNode.textContent = totalMoney;
+    }
+
+    document.getElementById("donateButton").addEventListener("click", addMoney);
+  </script>
+</head>
+<body>
+  <h1>Donate</h1>
+  <br>
+  <label for="donationAmount">Donation amount (minimum $10,000):</label>
+
+  <input type="number" id="donationAmount" name="donationAmount"
+       min="10000" placeholder="10000">
+  <br>
+  <button id=donateButton>Donate</button>
+  <p>You have donated: $<span id=totalDonations>0</span></p>
+</body>
+</html>
